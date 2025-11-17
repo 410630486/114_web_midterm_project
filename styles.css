@@ -1,0 +1,153 @@
+/* 主題色（覆寫 Bootstrap 變數為棕色） */
+:root {
+  --bs-primary: #8B5E3C; /* 棕色 */
+  --bs-primary-rgb: 139,94,60;
+  --bs-primary-text: #ffffff;
+  --bs-btn-hover-bg: #7a4f35;
+}
+
+/* 基本樣式 */
+body { font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans", "Helvetica Neue", Arial; }
+.card-img-top { height: 180px; object-fit: cover; }
+.card { cursor: pointer; }
+.fav-badge { position: absolute; right: 10px; top: 10px; z-index: 2; }
+
+/* 小修改：讓 outline-primary 與 btn-primary 更符合棕色主題 */
+.btn-primary {
+  background-color: var(--bs-primary) !important;
+  border-color: var(--bs-primary) !important;
+}
+.btn-primary:hover, .btn-primary:focus {
+  background-color: rgba(var(--bs-primary-rgb), 0.95) !important;
+  border-color: rgba(var(--bs-primary-rgb), 0.95) !important;
+}
+.btn-outline-primary {
+  color: var(--bs-primary) !important;
+  border-color: var(--bs-primary) !important;
+}
+.bg-primary {
+  background-color: var(--bs-primary) !important;
+}
+
+@media (max-width: 576px) {
+  .card-img-top { height: 140px; }
+}
+
+.no-results { padding: 2rem; text-align: center; color: #666; }
+
+/* 專業版面調整 */
+.app { max-width: 1100px; margin: 0 auto; }
+body { background-color: #f7f3ef; color: #2b2b2b; }
+header.bg-primary { background: linear-gradient(90deg, rgba(139,94,60,1), rgba(118,78,50,1)); }
+header h1 { letter-spacing: .6px; font-weight: 600; }
+
+/* 卡片視覺優化 */
+.card { border: 0; border-radius: 10px; overflow: hidden; box-shadow: 0 8px 18px rgba(33,30,24,0.06); transition: transform .18s ease, box-shadow .18s ease; }
+.card .card-img-top { border-bottom: 1px solid rgba(0,0,0,0.04); }
+.card .card-body { padding: 1rem; }
+.card-title { font-weight: 600; }
+
+/* 圖片不要滿版、在 modal 中限制尺寸 */
+#detailImage { width: 100%; height: auto; max-height: 360px; object-fit: contain; display: block; margin-bottom: .6rem; }
+
+/* 收藏標記樣式 */
+.fav-badge { right: 12px; top: 12px; border-radius: 6px; padding: 4px 7px; }
+
+/* Modal 可讀性調整：確保文字在淺/深主題下都有足夠對比 */
+.modal-content {
+  background-color: #ffffff; /* 預設淺色背景 */
+  color: #2b2b2b; /* 與 body 相同的主文字色 */
+}
+.modal-content .modal-title,
+.modal-content .modal-body,
+.modal-content .modal-header,
+.modal-content .modal-footer { color: inherit; }
+
+/* 深色模式下 modal 背景與文字 */
+body.dark .modal-content {
+  background-color: #2b2724; /* 與卡片相同的深色背景 */
+  color: #efe9e3;
+}
+body.dark .modal-content .btn-close {
+  filter: invert(1) grayscale(1) contrast(1.2);
+}
+
+/* 點選或 focus 在卡片時，確保標題與內文顏色清晰 */
+.card:active, .card:focus, .card:focus-within {
+  outline: none;
+}
+.card:active .card-title,
+.card:focus .card-title,
+.card:focus-within .card-title {
+  color: #222; /* 稍微加深標題在淺色主題時的顏色 */
+}
+body.dark .card:active .card-title,
+body.dark .card:focus .card-title,
+body.dark .card:focus-within .card-title {
+  color: #fff; /* 深色模式時保持明亮標題 */
+}
+
+/* 修正 btn-outline-light 在淺色背景時的可視性 */
+.btn-outline-light { color: #fff; border-color: rgba(255,255,255,0.3); }
+
+/* 保持按鈕大小一致 */
+.btn-sm { padding: .28rem .6rem; }
+
+/* 保留較多白邊讓頁面看起來更專業 */
+main.container { padding-top: 8px; padding-bottom: 8px; }
+
+
+/* 動畫：卡片淡入並略微上移 */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.card.fade-in {
+  opacity: 0;
+  animation: fadeInUp 420ms cubic-bezier(.2,.8,.2,1) both;
+}
+.card:hover { transform: translateY(-6px); transition: transform 180ms ease, box-shadow 180ms ease; }
+
+/* Split landing view */
+.split-view { display: flex; width: 100%; height: calc(100vh - 40px); margin-bottom: 1rem; border-radius: 12px; overflow: hidden; box-shadow: 0 8px 28px rgba(33,30,24,0.08); }
+.split { flex: 1 1 50%; position: relative; background-size: cover; background-position: center; display: flex; align-items: center; justify-content: center; cursor: pointer; }
+.split.left { background-image: url('assets/lion.svg'); }
+.split.right { background-image: url('assets/animal/whale.jpg'); }
+.split .overlay { background: linear-gradient(180deg, rgba(0,0,0,0.25), rgba(0,0,0,0.25)); color: #fff; padding: 1.6rem; text-align: center; border-radius: 8px; position: relative; z-index: 2; }
+.split-art { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 1; display: block; }
+.split.left .overlay { background: linear-gradient(180deg, rgba(75,45,30,0.4), rgba(0,0,0,0.2)); }
+.split.right .overlay { background: linear-gradient(180deg, rgba(0,60,90,0.32), rgba(0,0,0,0.2)); }
+.split .overlay h2 { font-size: 2.2rem; margin: 0 0 .3rem 0; }
+.split .overlay .lead { font-size: 1.2rem; margin: 0 0 .3rem 0; font-weight: 600; }
+.split .overlay .muted { opacity: 0.9; }
+
+/* Hide split view when catalog is active */
+.split-view.hidden { display: none; }
+
+@media (max-width: 900px) {
+  .split-view { flex-direction: column; height: auto; }
+  .split { min-height: 220px; }
+}
+
+/* 深色模式 */
+body.dark {
+  background-color: #1e1a17;
+  color: #efe9e3;
+}
+body.dark .bg-light { background-color: #2a2522 !important; }
+body.dark .bg-primary { background-color: var(--bs-primary) !important; }
+body.dark .card { background-color: #2b2724; color: #efe9e3; border-color: rgba(255,255,255,0.04); }
+body.dark .card .card-text.small { color: #d7cfc7; }
+body.dark .btn-outline-primary { color: var(--bs-primary) !important; border-color: var(--bs-primary) !important; }
+body.dark .btn-primary { background-color: var(--bs-primary) !important; }
+
+/* RWD 微調：在小螢幕讓搜尋、分類垂直堆疊 */
+@media (max-width: 768px) {
+  #categoriesContainer { gap: 0.4rem; }
+}
+@media (max-width: 576px) {
+  .card-img-top { height: 140px; }
+  .container.d-flex.align-items-center.justify-content-between { flex-direction: column; align-items: flex-start; gap: .5rem; }
+  #searchInput { width: 100%; }
+}
+
