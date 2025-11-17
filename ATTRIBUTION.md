@@ -1601,3 +1601,39 @@ Crab image (assets/animal/crab.jpg)
 - License: CC BY-SA 4.0
 - Notes: downloaded and saved locally for the project; please retain attribution when reusing.
 
+
+---
+
+§jµVµV image (assets/animal/gorilla.jpg) https://commons.wikimedia.org/wiki/File:File:Mountain_gorilla_(Gorilla_beringei_beringei)_female_3.jpg https://upload.wikimedia.org/wikipedia/commons/d/d8/Mountain_gorilla_%28Gorilla_beringei_beringei%29_female_3.jpg Charles J. Sharp CC BY-SA 4.0
+
+- Source page: 
+- Direct file URL: 
+- Author: 
+- License: 
+
+Notes: UPDATED ??replaced incorrect image; please retain attribution when reusing.
+
+
+---
+
+Ù∆Î` image (assets/animal/salamander.jpg) https://commons.wikimedia.org/wiki/File:File:Blue-spotted_salamander_Alberto_Rey_3-20-202034895_(1).jpg https://upload.wikimedia.org/wikipedia/commons/c/cc/Blue-spotted_salamander_Alberto_Rey_3-20-202034895_%281%29.jpg ArtistofWNY CC BY-SA 4.0
+
+- Source page: 
+- Direct file URL: 
+- Author: 
+- License: 
+
+Notes: UPDATED ??replaced incorrect image; please retain attribution when reusing.
+
+
+---
+
+¨Ô§s•“ image (assets/animal/pangolin.jpg) https://commons.wikimedia.org/wiki/File:File:Montage_of_images_of_a_pangolin_and_pangolin_products_-_oo_246940.jpg https://upload.wikimedia.org/wikipedia/commons/0/04/Montage_of_images_of_a_pangolin_and_pangolin_products_-_oo_246940.jpg D°¶Cruze N, Singh B, Mookerjee A, Harrington LA, Macdonald DW (2018) CC BY 4.0
+
+- Source page: 
+- Direct file URL: 
+- Author: 
+- License: 
+
+Notes: UPDATED ??replaced incorrect image; please retain attribution when reusing.
+
